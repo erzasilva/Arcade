@@ -10,7 +10,7 @@ public:
     Rectangle(const Vec2D& topLeft, const Vec2D& bottomRight);
 
     inline void SetTopLeftPoint(const Vec2D& topLeft) { Points[0] = topLeft; }
-    inline void SetBottomRightPOint(const Vec2D& bottomRight) { Points[1] = bottomRight; }
+    inline void SetBottomRightPoint(const Vec2D& bottomRight) { Points[1] = bottomRight; }
 
     inline Vec2D GetTopLeftPoint() const { return Points[0]; }
     inline Vec2D GetBottomRightPoint() const { return Points[1]; }

@@ -9,7 +9,7 @@ ScreenBuffer::ScreenBuffer():mSurface(nullptr)
 
 ScreenBuffer::ScreenBuffer(const ScreenBuffer& screenBuffer)
 {
-	mSurface = SDL_CreateRGBSurfaceWithFormat(0, screenBuffer.mSurface->w, screenBuffer.mSurface->h, 0, screenBuffer.mSurface->format->format);
+	mSurface = SDL_CreateRGBSurfaceWithFormat(0, screenBuffer.mSurface->w, screenBuffer.mSurface->h, 0, SDL_PIXELFORMAT_ARGB8888);//screenBuffer.mSurface->format->format);
 	SDL_BlitSurface(screenBuffer.mSurface, nullptr, mSurface, nullptr);
 }
 
@@ -64,8 +64,8 @@ void ScreenBuffer::SetPixel(const Color& color, int x, int y)
 		SDL_LockSurface(mSurface);
 		uint32_t* pixels = (uint32_t*)mSurface->pixels;
 		size_t index = GetIndex(y, x);
-		pixels[index] = color.GetPixelColor();
-
+		Color surfaceColor = Color(pixels[index]);
+		pixels[index] = Color::Evaluate1MinusSourceAlpha(color, surfaceColor).GetPixelColor();
 		SDL_UnlockSurface(mSurface);
 	}
 

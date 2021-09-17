@@ -1,4 +1,6 @@
-﻿  Rectangle.cpp
-  Triangle.cpp
+﻿  App.cpp
+D:\College\ArcadeApp\ArcadeApp\App.cpp(35,13): warning C4101: 'sdlEvent': unreferenced local variable
+  InputController.cpp
+  main.cpp
   Generating Code...
   ArcadeApp.vcxproj -> D:\College\ArcadeApp\ArcadeApp\x64\Debug\ArcadeApp.exe

@@ -2,6 +2,7 @@
 #include "SDL.h"
 
 const SDL_PixelFormat* Color::mFormat = nullptr;
+
 void Color::InitColorFormat(const SDL_PixelFormat* format)
 {
 	Color::mFormat = format;
@@ -80,4 +81,23 @@ uint8_t Color::GetAlpha() const
 
 	SDL_GetRGBA(mColor, mFormat, &r, &g, &b, &a);
 	return a;
+}
+
+Color Color::Evaluate1MinusSourceAlpha(const Color& source, const Color& dest)
+{
+	uint8_t alpha = source.GetAlpha();
+
+	float sourceAlpha = float(alpha) / 255.0f;
+	double destAlpha = 1 - sourceAlpha;
+
+	Color OutColor;
+
+	OutColor.SetAlpha(255);
+	OutColor.SetRed(float(source.GetRed() * sourceAlpha + dest.GetRed() * destAlpha));
+	OutColor.SetGreen(float(source.GetGreen() * sourceAlpha + dest.GetGreen() * destAlpha));
+	OutColor.SetBlue(float(source.GetBlue() * sourceAlpha + dest.GetBlue() * destAlpha));
+
+
+	return OutColor;
+
 }

@@ -2,11 +2,15 @@
 #define SCREEN_H
 
 #include <stdint.h>
+#include <vector>
 #include "ScreenBuffer.h"
 #include "Color.h"
 
 class Vec2D;
 class Line2D;
+class Triangle;
+class Rectangle;
+class Circle;
 struct SDL_Window;
 struct SDL_Surface;
 
@@ -30,6 +34,9 @@ public:
 	void Draw(int x, int y, const Color& color);
 	void Draw(const Vec2D& point, const Color& color);
 	void Draw(const Line2D& line, const Color& color);
+	void Draw(const Triangle& triangle, const Color& color, bool fill = false, const Color& fillColor = Color::White());
+	void Draw(const Rectangle& rect, const Color& color, bool fill = false, const Color& fillColor = Color::White());
+	void Draw(const Circle& rect, const Color& color, bool fill = false, const Color& fillColor = Color::White());
 
 private:
 	// Make it non Copyable
@@ -37,6 +44,7 @@ private:
 	Screen& operator=(const Screen& oScreen);
 
 	void ClearScreen();
+	void PolyFill(const std::vector<Vec2D> points, const Color& color);
 
 	uint32_t mWidth, mHeight;
 
