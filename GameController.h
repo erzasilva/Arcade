@@ -25,11 +25,16 @@ public:
 	inline void SetMouseMovedAction(const MouseMovedAction& mouseMovedAction) { mMouseMovedAction = mouseMovedAction; }
 
 	MouseInputAction GetMouseButtonActionForMouseButton(MouseButton button);
+	void AddMouseButtonAction(const MouseButtonAction& action);
+
+	static MouseButton LeftMouseButton();
+	static MouseButton RightMouseButton();
 
 
 
 private:
 	std::vector<ButtonAction> mButtonActions;
+	std::vector<MouseButtonAction> mMouseButtonAction;
 	MouseMovedAction mMouseMovedAction;
 };
 

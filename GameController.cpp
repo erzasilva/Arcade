@@ -1,7 +1,7 @@
 #include "GameController.h"
 #include "SDL.h"
 #include <iostream>
-GameController::GameController()
+GameController::GameController():mMouseMovedAction(nullptr)
 {
 
 }
@@ -68,4 +68,35 @@ InputKey GameController::UpKey()
 InputKey GameController::DownKey()
 {
 	return static_cast<InputKey>(SDLK_DOWN);
+}
+
+
+MouseInputAction GameController::GetMouseButtonActionForMouseButton(MouseButton button)
+{
+	for (const auto& buttonAction : mMouseButtonAction)
+	{
+		if (button == buttonAction.mouseButton)
+		{
+			return buttonAction.mouseInputAction;
+		}
+	}
+
+	return [](InputState state, const MousePosition& pos) {};
+}
+
+void GameController::AddMouseButtonAction(const MouseButtonAction& action)
+{
+	mMouseButtonAction.push_back(action);
+}
+
+
+MouseButton GameController::LeftMouseButton()
+{
+	return static_cast<MouseButton>(SDL_BUTTON_LEFT);
+}
+
+MouseButton GameController::RightMouseButton()
+{
+	return static_cast<MouseButton>(SDL_BUTTON_RIGHT);
+
 }

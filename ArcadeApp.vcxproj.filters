@@ -49,6 +49,12 @@
     <Filter Include="Source Files\Input">
       <UniqueIdentifier>{270cb1c3-1572-432c-8dc9-4c9c3ef980f2}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\Games">
+      <UniqueIdentifier>{0b39aaf8-a7a7-4c3c-b837-aff37863a08a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Games">
+      <UniqueIdentifier>{d9a43b55-7cfc-4e56-9947-af053d6e2b76}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="App.h">
@@ -99,6 +105,12 @@
     <ClInclude Include="InputController.h">
       <Filter>Header Files\Input</Filter>
     </ClInclude>
+    <ClInclude Include="Game.h">
+      <Filter>Header Files\Games</Filter>
+    </ClInclude>
+    <ClInclude Include="GameScene.h">
+      <Filter>Header Files\Scene</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -145,6 +157,12 @@
     </ClCompile>
     <ClCompile Include="InputController.cpp">
       <Filter>Source Files\Input</Filter>
+    </ClCompile>
+    <ClCompile Include="Game.cpp">
+      <Filter>Source Files\Games</Filter>
+    </ClCompile>
+    <ClCompile Include="GameScene.cpp">
+      <Filter>Source Files\Scene</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

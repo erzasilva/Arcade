@@ -24,7 +24,7 @@ Vec2D Line2D::ClosestPoint(const Vec2D& p, bool limitToSegment) const
 	Vec2D P0toP = p - P0;
 	Vec2D P0toP1 = P1 - P0;
 
-	float l2 = P0toP.Mag2();
+	float l2 = P0toP1.Mag2();
 
 	float dot = P0toP.Dot(P0toP1);
 

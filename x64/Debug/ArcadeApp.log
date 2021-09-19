@@ -1,6 +1,11 @@
-﻿  App.cpp
-D:\College\ArcadeApp\ArcadeApp\App.cpp(35,13): warning C4101: 'sdlEvent': unreferenced local variable
-  InputController.cpp
-  main.cpp
-  Generating Code...
+﻿  Screen.cpp
+D:\College\ArcadeApp\ArcadeApp\Screen.cpp(85,55): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+D:\College\ArcadeApp\ArcadeApp\Screen.cpp(85,41): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+D:\College\ArcadeApp\ArcadeApp\Screen.cpp(96,10): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+D:\College\ArcadeApp\ArcadeApp\Screen.cpp(97,10): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+D:\College\ArcadeApp\ArcadeApp\Screen.cpp(98,10): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+D:\College\ArcadeApp\ArcadeApp\Screen.cpp(99,10): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+D:\College\ArcadeApp\ArcadeApp\Screen.cpp(262,19): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+D:\College\ArcadeApp\ArcadeApp\Screen.cpp(305,41): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+D:\College\ArcadeApp\ArcadeApp\Screen.cpp(305,73): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
   ArcadeApp.vcxproj -> D:\College\ArcadeApp\ArcadeApp\x64\Debug\ArcadeApp.exe

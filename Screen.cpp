@@ -259,7 +259,7 @@ void Screen::PolyFill(const std::vector<Vec2D> points, const Color& color)
 			}
 		}
 
-		for (int pixelY = top; pixelY < bottom; ++pixelY)
+		for (int pixelY = top; pixelY < bottom; pixelY++)
 		{
 			std::vector<float> nodeXVec;
 			size_t j = points.size() - 1;
@@ -306,6 +306,7 @@ void Screen::PolyFill(const std::vector<Vec2D> points, const Color& color)
 					Line2D line = { Vec2D(nodeXVec[k], pixelY), Vec2D(nodeXVec[k + 1], pixelY) };
 					Draw(line, color);
 					*/
+					
 
 					for (int pixelX = nodeXVec[k]; pixelX < nodeXVec[k + 1]; ++pixelX)
 					{
